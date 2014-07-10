@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>RPSLS</title>
+	<style>
+		img {
+			width: 200px;
+			height: 200px;
+			opacity: 0.5;
+			display: inline-block;
+		}
+
+		img:hover {
+			opacity: 1.0;
+			cursor: pointer;
+		}
+
+		#results {
+			list-style: none;
+		}
+
+		#results li {
+			background: #999;
+			color: #fff;
+			font-size: 24px;
+			border-radius: 8px;
+			padding: 5px;
+			width: 80%;
+			margin-bottom: 10px;
+			display: none;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<h1>Rock Paper Scissors Lizard Spock</h1><br/>
+	<img src = 'images/rock.png' data-pick = 'rock'>
+	<img src = 'images/paper.png' data-pick = 'paper'>
+	<img src = 'images/scissors.png' data-pick = 'scissors'>
+	<img src = 'images/lizard.png' data-pick = 'lizard'>
+	<img src = 'images/spock.png' data-pick = 'spock'>
+
+	<ul id='results'></ul>
+
+	<script type="text/javascript" src="lib/rockPaperScissors.js"></script>
+	<script type="text/javascript" src = "lib/jquery-2.1.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+		var fitsum = new Player(prompt('Please enter your name', 'player1')),
+		computer = new Player('Computer'),
+		game = new Game(fitsum, computer),
+		choices = ["rock", "paper", "scissors", "lizard", "spock"];
+
+		function randomize(){
+			return Math.floor(Math.random() * 5)
+		}
+
+		$('img').on('click', function(){
+			fitsum.picks($(this).data('pick'));
+			computer.picks(choices[randomize()]);
+			
+			$('<li>' + game.winnerName() +game.announcement() + '</li>').prependTo('#results').slideDown();
+			$('li:gt(4)').fadeOut(function(){
+				$(this).remove();
+			});
+		});
+		});
+	</script>
+</body>
+</html>
