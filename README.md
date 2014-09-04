@@ -1,7 +1,7 @@
 Description
 =========
 
-* This was done as part of an exercise in the Javascript lesson. It is a implementation of the Rock-Paper_Scissors game. 
+* This was done as part of an exercise in the Javascript lesson. It is a implementation of the Rock-Paper-Scissors game. 
 
 Technologies Used
 =========
