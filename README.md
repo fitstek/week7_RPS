@@ -1,6 +1,16 @@
-RPSLS
+Description
+=========
 
-Is an implementation of the Rock-Paper-Scissors-Lizard-Spock game as seen on
-the big bang theory. It is completely playable on the browser. 
+* This was done as part of an exercise in the Javascript lesson. It is a implementation of the Rock-Paper_Scissors game. 
 
+Technologies Used
+=========
 
+* JS
+* JQuery library
+
+How to use
+=========
+
+* git clone git@github.com:fitstek/week7_RPS.git
+* open the index.html
